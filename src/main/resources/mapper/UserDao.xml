@@ -1,0 +1,33 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dao.UserDao">
+	<!--目的:为dao接口方法提供sql语句配置 即针对dao接口中的方法编写我们的sql语句 -->
+
+	<select id="queryUser" resultType="User">
+		SELECT
+		*
+		FROM
+		user where
+		username=#{username}
+	</select>
+	<select id="queryById" resultType="User">
+		select * from user where
+		id=#{id}
+	</select>
+
+	<!-- <select id="queryGuitarById" resultType="Guitar" resultMap="SpecMapper"> 
+		SELECT * FROM guitar g where id=#{id} </select> <resultMap type="Entity.Guitar" 
+		id="SpecMapper"> <association property="spec" column="id" select="Dao.GuitarSpecDao.queryGuitarSpecById" 
+		javaType="Entity.GuitarSpec" /> </resultMap> -->
+	<insert id="addUser" keyProperty="id" useGeneratedKeys="true">
+		insert
+		into User(username,password)
+		values(#{username},#{password})
+	</insert>
+	<update id="changePassword">
+		update user set password=#{password} where
+		username=#{username}
+	</update>
+	<!-- <delete id="deleteGuitar"> delete from guitar where id=#{id} </delete> -->
+</mapper>
