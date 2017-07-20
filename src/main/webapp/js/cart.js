@@ -10,7 +10,7 @@ $(function() {
 	$('.close').on('click',function(c) {		
 		var cartid=$(this).attr("title")
 		cart.deleteCakeFromCart(cartid)		
-	});
+	}); 
 })
 
 function addToCart(id,username){
