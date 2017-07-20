@@ -95,21 +95,6 @@
                     </div>
                    
                 </div>
-                <div class="col-md-4 single-grid1">
-                    <h2>Account</h2>
-                    <ul>
-                        <li><a href="#">Offers</a></li>
-                        <li><a href="products.html">New products</a></li>
-                        <li><a href="account.html">Register</a></li>
-                        <li><a href="account.html">Forgot Your Password</a></li>
-                        <li><a href="account.html">My account</a></li>
-                        <li><a href="contact.html">Address</a></li>
-                        <li><a href="checkout.html.html">wishlist</a></li>
-                        <li><a href="checkout.html.html">Order history</a></li>
-                        <li><a href="#">Downloads</a></li>
-                        <li><a href="#">Reward points</a></li>
-                    </ul>
-                </div>
                 <div class="clearfix"></div>
             </div>
         </div>

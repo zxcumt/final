@@ -156,8 +156,8 @@ public class GoodsController extends BaseController<Goods> {
 			String filename2 = UUID.randomUUID().toString();
 			indeximage.transferTo(new File(path + File.separator + filename + ".jpg"));
 			detailimage.transferTo(new File(path + File.separator + filename2 + ".jpg"));
-			good.setImage("http://localhost:8080/MiaoSha/images/"+filename + ".jpg");
-			good.setImage2("http://localhost:8080/MiaoSha/images/"+filename2 + ".jpg");
+			good.setImage("http://localhost:8080/final/images/"+filename + ".jpg");
+			good.setImage2("http://localhost:8080/final/images/"+filename2 + ".jpg");
 			
 		}
 		return 	goodsService.addGood(good);

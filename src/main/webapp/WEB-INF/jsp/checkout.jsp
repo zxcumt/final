@@ -48,19 +48,28 @@
                             <h3>
                                 <a href="#"> ${cake.name} </a><span>${cake.status}</span>
                             </h3>
+                             
                             <ul class="qty">
                                 <li><p>单价:${cake.price}</p></li>
-                                <li><p>数量:X${cake.number}</p></li>
+                               
+                                <li><p class="qty2">数量 :</p>
+                    <input min="1" type="number" id="quantity2" name="quantity2"
+                        value="${cake.number}" class="form-control input-small"></li>
                                 <li><p>包邮</p></li>
                             </ul>
+                            <span id="sinplecartprice"
+									title="${cake.number*cake.price}">最终价:${cake.number*cake.price}</span>
+                            
+                           
                             <div class="delivery">
-                                <p>折扣 : 无</p>
-                                <span id="sinplecartprice"
-                                    title="${cake.number*cake.price}">最终价:${cake.number*cake.price}</span>
+                               
+                                
                                 <div class="clearfix"></div>
                             </div>
                         </div>
+                        
                         <div class="clearfix"></div>
+                        
                     </div>
                 </div>
             </c:forEach>

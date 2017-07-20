@@ -47,7 +47,7 @@ public class UserController extends BaseController<User> {
 	public boolean register(Model model, @ModelAttribute("user") User user) {
 		if (userService.registUser(user)) {
 			model.addAttribute("username", user.getUsername());
-			emailSendUtil.sendEmail("467942350@qq.com", "注册成功", "注册成功");
+			emailSendUtil.sendEmail("741627784@qq.com", "注册成功", "注册成功");
 			return true;
 		} else {
 			return false;

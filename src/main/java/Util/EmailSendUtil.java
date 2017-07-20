@@ -21,13 +21,13 @@ public class EmailSendUtil {
         props.setProperty("mail.host", "smtp.163.com");
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("18952247316@163.com", "jjj467942350");
+                return new PasswordAuthentication("yifuangli@163.com", "ainiyiyi.01");
             }
         });
         session.setDebug(true);
         Message msg = new MimeMessage(session);
         try {
-        msg.setFrom(new InternetAddress("18952247316@163.com"));
+        msg.setFrom(new InternetAddress("yifuangli@163.com"));
         msg.setSubject(subject);
         msg.setRecipients(RecipientType.TO, InternetAddress.parse(email));
         msg.setContent(content, "text/html;charset=GBK");
