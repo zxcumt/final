@@ -23,6 +23,7 @@
 								收货地址：${order.address} &nbsp &nbsp收货人:${order.personname}
 							</a>
 						</h5>
+					
 					</div>
 					<div id="collapse${idx.index}" class="panel-collapse collapse in"
 						role="tabpanel" aria-labelledby="heading${idx.index}">
@@ -37,7 +38,9 @@
 											<th>商品名称</th>
 											<th>商品信息</th>
 											<th>商品总价</th>
+											<th>评价</th>
 										</tr>
+										
 									</thead>
 									<c:forEach items="${order.queryCarksAllDto.cakes}" var="cake"
 										varStatus="cakeidx">
@@ -53,6 +56,7 @@
 												单价:${cake.price} $<br> 数量:x${cake.number}
 											</td>
 											<td>${cake.price*cake.number}</td>
+											<td><a href="comment">订单评价</a></td>
 
 										</tr>
 									</c:forEach>
