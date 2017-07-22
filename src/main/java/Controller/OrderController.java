@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,11 +17,14 @@ import Dto.QueryCarksAllDto;
 import Entity.Address;
 import Entity.Orders;
 import Entity.ShoppingCart;
+import Entity.User;
+import Util.EmailSendUtil;
 
 
 @Controller
 @RequestMapping("/order")
 public class OrderController extends BaseController<Orders> {
+	private EmailSendUtil emailSendUtil = new EmailSendUtil();
 	/**
 	 * 订单确认 TODO String
 	 */
@@ -52,9 +56,10 @@ public class OrderController extends BaseController<Orders> {
 	}
 
 	@RequestMapping("/ordersuccess")
-	public String ordersuccess(Model model, @RequestParam("orderId") int orderId) {
+	public String ordersuccess(Model model, @RequestParam("orderId") int orderId,@ModelAttribute("user") User user) {
 		Orders order = orderservice.ordersuccess(orderId);
 		model.addAttribute("order", order);
+		emailSendUtil.sendEmail("741627784@qq.com", "下单成功", "下单成功，感谢您的光临！");
 		return "ordersuccess";
 	}
 	/*

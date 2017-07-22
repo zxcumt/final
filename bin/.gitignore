@@ -4,4 +4,6 @@
 /Entity/
 /Service/
 /Util/
+/jdbc.properties
 /listener/
+/log4j.properties
